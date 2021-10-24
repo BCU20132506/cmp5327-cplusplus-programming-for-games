@@ -4,6 +4,6 @@
 
 int main()
 {
-    std::cout << "Game Over!" << std::endl;
+    std::cout << "Game Over My Friend!" << std::endl;
     return 0;
 }
