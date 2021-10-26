@@ -1,15 +1,14 @@
 <!-- ABOUT THE PROJECT -->
-#  Awesome 2D Shooter Game
+Zombie Royale
 
 <!-- A screenshot of your game would be nice here... -->
 
 This is a short and succint description of this project. 
-Jump'n'run vaporwave zombie-shooting game. Run to the exit before the water gets too high, defend yourself against brain-hungry zombies :running_man:
-
+2-D side scrolling zombie killer adventure. Can you survive the incoming apocalypse?
 Features:
-* Collect and switch between weapons :bomb:
-* Load game maps from the main menu :desert_island:
-* Collect as many coins as you can :moneybag:
+* Collect and switch between different weapons such as, guns, grenades and meele.
+* Select different levels from the menus.
+* Collect zombie limbs to count up the kills
 
 ## Dependencies
 * SDL library
@@ -24,10 +23,10 @@ Instructions to build on Windows platforms:
 
 ## TODO
 
-* A* pathfinding for zombie;
-* Weapon sound effects;
-* low-health camera effect.
+* Pathfinding for aome enemies whilst others follow a set pattern;
+* Sound effects for enemies and player;
+* Health bars complete with interactive HUD;
 
 ## Contact
 
-Your Name - email@example.com
+Connor Hadley- connor.hadley@mail.bcu.ac.uk
