@@ -1,5 +1,7 @@
+#define SDL_MAIN_HANDLED
 #include <iostream>
 #include <string>
+#include <SDL.h>
 
 int sum(int a, int b) {
 	return a + b;
@@ -7,7 +9,7 @@ int sum(int a, int b) {
 
 int main() {
 
-	int a = 0;
+	/*int a = 0;
 	int b = 0;
 
 	std::string input;
@@ -26,7 +28,7 @@ int main() {
 		std::cout << "Press 0 to exit, any other to continue" << std::endl;
 		getline(std::cin, input);
 		run = std::stoi(input);
-	}
+	}*/
 
 	return 0;
 }
