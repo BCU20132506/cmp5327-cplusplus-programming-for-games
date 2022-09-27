@@ -3,34 +3,48 @@
 #include <string>
 #include <SDL.h>
 
-int sum(int a, int b) {
-	return a + b;
-}
-
 int main() {
 
-	/*int a = 0;
-	int b = 0;
+	SDL_Window* window = nullptr;
+	SDL_Surface* screenSurface = nullptr;
 
-	std::string input;
-	std::cout << "Enter value for A:" << std::endl;
-	getline(std::cin, input);
+	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+		std::cout << "could not initialise SDL2" << std::endl;
+		std::cout << SDL_GetError() << std::endl;
+		return 1;
+	}
 
-	std::cout << "Enter value for B:" << std::endl;
-	getline(std::cin, input);
+	window = SDL_CreateWindow(
+		"hello_sdl2",
+		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		800, 600,
+		SDL_WINDOW_SHOWN
+	);
+	if (window == NULL) {
+		std::cout << "could not initialise window" << std::endl;
+		std::cout << SDL_GetError() << std::endl;
+		return 1;
+	}
 
+	screenSurface = SDL_GetWindowSurface(window);
+	SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 144, 238, 144));
+	SDL_UpdateWindowSurface(window);
+	
+	bool quitting = false;
+	while (!quitting) {
+		SDL_Event e;
+		while (SDL_PollEvent(&e)) {
+			if (e.type == SDL_KEYDOWN) {
+				switch (e.key.keysym.scancode) {
+				case SDL_SCANCODE_Q:
+					quitting = true;
+						break;
+				}
+			}
+		}
+	}
 
-	std::cout << "Sum of A and B is:" << sum (a, b) << std::endl;
-
-	int run = 1;
-	while (run) {
-		std::string input;
-		std::cout << "Press 0 to exit, any other to continue" << std::endl;
-		getline(std::cin, input);
-		run = std::stoi(input);
-	}*/
-
-
-
-	return 0;
-}
+		SDL_DestroyWindow(window);
+		SDL_Quit();
+		return 0;
+	}
