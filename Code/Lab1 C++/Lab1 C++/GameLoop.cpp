@@ -27,6 +27,9 @@ int GameLoop::init() {
 	screenSurface = SDL_GetWindowSurface(window);
 	return 0;
 
+	player = new Player(renderer);
+	player->init();
+
 }
 
 bool GameLoop::keepAlive() {
@@ -56,9 +59,14 @@ void GameLoop::update() {
 
 void GameLoop::render() {
 
+	SDL_RenderClear(renderer);
+	player->render();
+	SDL_RenderPresent(renderer);
 }
 
 void GameLoop::clean() {
+
+	delete player;
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 
