@@ -23,13 +23,13 @@ int GameLoop::init() {
 		std::cout << SDL_GetError() << std::endl;
 		return -1;
 	}
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	screenSurface = SDL_GetWindowSurface(window);
-	return 0;
 
 	player = new Player(renderer);
 	player->init();
-
+	return 0;
 }
 
 bool GameLoop::keepAlive() {

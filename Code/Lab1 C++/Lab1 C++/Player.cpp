@@ -7,7 +7,7 @@ Player::Player(SDL_Renderer* sdlRenderer) {
 void Player::init() {
 	SDL_Surface* image = IMG_Load("assets/chibiCarlo.png");
 	if (image == nullptr) {
-		std::cout << "Couldn't load image" << std::endl;
+		std::cout << "Couldn't load image" << SDL_GetError() << std::endl;
 		return;
 	}
 	texture = SDL_CreateTextureFromSurface(renderer, image);
