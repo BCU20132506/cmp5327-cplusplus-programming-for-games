@@ -71,3 +71,4 @@ void GameLoop::clean() {
 	SDL_Quit();
 
 }
+
